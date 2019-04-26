@@ -1,0 +1,61 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.clearfix::after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: ".";
+    clear: both;
+    height: 0;
+}
+
+.tab-container {
+    height: 50px;
+    width: 400px;
+    margin:10px 0px 0px 10px;
+}
+
+.tab-container button {
+    box-sizing: content-box;
+    float: left;
+    height: 50px;
+    width: 200px;
+    border: 0px ;
+    color: #fff;
+    outline: none;
+    border-radius: 8px 8px 0px 0px;
+}
+.tab1{
+    background-color: blueviolet;
+}
+.tab2{
+    background-color:black;
+}
+.page-container{
+    height: 360px;
+    width: 400px;
+    margin-left: 10px;
+}
+.page {
+    height: 100%;
+    color: #fff;
+    line-height: 180px;
+    text-align: center;
+    border-radius: 0 0 8px 8px;
+}
+.page1{
+    background-color: blueviolet;
+}
+.page2{
+    display: none;
+    background-color: black;
+}

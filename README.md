@@ -1,2 +1,2 @@
 # practice
-blog exercise and tab page
+blog exercise and tab exercise
