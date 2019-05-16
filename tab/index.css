@@ -1,6 +1,11 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+}
+button {
+    outline: none;
+    border: 1px solid black;
 }
 
 html,
@@ -9,53 +14,77 @@ body {
     width: 100%;
 }
 
-.clearfix::after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: ".";
-    clear: both;
-    height: 0;
-}
-
-.tab-container {
-    height: 50px;
-    width: 400px;
-    margin:10px 0px 0px 10px;
-}
-
-.tab-container button {
-    box-sizing: content-box;
-    float: left;
-    height: 50px;
-    width: 200px;
-    border: 0px ;
-    color: #fff;
-    outline: none;
-    border-radius: 8px 8px 0px 0px;
-}
-.tab1{
-    background-color: blueviolet;
-}
-.tab2{
-    background-color:black;
-}
-.page-container{
-    height: 360px;
-    width: 400px;
-    margin-left: 10px;
-}
-.page {
-    height: 100%;
-    color: #fff;
-    line-height: 180px;
-    text-align: center;
-    border-radius: 0 0 8px 8px;
-}
-.page1{
-    background-color: blueviolet;
-}
-.page2{
+.tab-page {
     display: none;
-    background-color: black;
+}
+.clicked-page {
+    display: block;
+}
+
+.tab-button {
+    height: 50px;
+    width: 100px;
+}
+#tab1 .page-container {
+    width: 300px;
+}
+#tab1 .button-container {
+    width: 300px;
+}
+#tab1 .tab-page {
+    height: 300px;
+}
+#tab1 .tab-page:nth-child(1) {
+    background-color: red;
+}
+#tab1 .tab-page:nth-child(2) {
+    background-color: yellow;
+}
+#tab1 .tab-page:nth-child(3) {
+    background-color: blue;
+}
+
+#tab2 {
+    width: 400px;
+    margin-top: 10px;
+}
+#tab2 .button-container {
+    width: 100px;
+    float: left;
+}
+#tab2 .page-container {
+    width: 300px;
+    float: left;
+}
+#tab2 .tab-page {
+    height: 250px;
+}
+#tab2 .tab-page:nth-child(1) {
+    background-color: red;
+}
+#tab2 .tab-page:nth-child(2) {
+    background-color: yellow;
+}
+#tab2 .tab-page:nth-child(3) {
+    background-color: blue;
+}
+#tab2 .tab-page:nth-child(4) {
+    background-color:purple;
+}
+#tab2 .tab-page:nth-child(5) {
+    background-color:pink;
+}
+.clearfix::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+
+#tab1 .clicked-button {
+    background-color: blueviolet;
+}
+
+#tab2 .clicked-button {
+    background-color: brown;
 }
