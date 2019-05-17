@@ -19,7 +19,15 @@ function Tab(id, className, buttonTextArray, pageArray, parentElement) {
         return `${buttonString}${pageString}`;
     };
     // 参数合法性判断
-
+    if (pageArray.length < 1) {
+        console.error('page数量必须大于0');
+    }
+    if (buttonTextArray.length !== pageArray.length) {
+        console.warn('buttoTextArray长度与pageArray不一致，可能出现非预期的表现');
+    }
+    if (parentElement.nodeType !== Node.ELEMENT_NODE) {
+        console.error('父节点必须是Element类型');
+    }
     // 基本属性
     this.pageCount = pageArray.length;
     this.tabHTML = _getTabHTML(this.pageCount, pageArray);
