@@ -5,7 +5,7 @@ function tabPage(id, content) {
 }
 
 
-function Tab(id, className, buttonTextArray, pageArray, parentElement) {
+function Tab(id, className, buttonTextArray, pageArray, parentElement, listenEvent='click') {
     // 内部方法
     const _getTabHTML = function(n, pageArray) {
         let buttonString = '<div class="button-container">';
@@ -39,8 +39,8 @@ function Tab(id, className, buttonTextArray, pageArray, parentElement) {
     this.curPage = 0;
     this.changeState(0, true);
 
-    // 监听点击事件
-    this.tabElement.addEventListener('click', (event) => {
+    // 监听事件
+    this.tabElement.addEventListener(listenEvent, (event) => {
         const buttonId = event.target.id;
         if (buttonId.indexOf('button')<0) { return; }
         const curNum = +buttonId.slice(6);
@@ -88,12 +88,12 @@ Tab.prototype.addPage = function(buttonTextArray, pageArray) {
     this.pageCount += length;
 }
 
-const page1 = new tabPage('page1', '这是第一个页面');
-const page2 = new tabPage('page2', '这是第二个页面');
+const page1 = new tabPage('page1', '<a href="https://ke.qq.com" target="_blank">这是第一个页面</a>');
+const page2 = new tabPage('page2', '<p>这是第二个页面</p>');
 const page3 = new tabPage('page3', '这是第三个页面');
 const page4 = new tabPage('page4', '这是第四个页面');
 const page5 = new tabPage('page5', '这是第五个页面');
 
 const tab1 = new Tab('tab1', 'tab1', ['button1','button2','button3'], [page1, page2, page3], document.body);
-const tab2 = new Tab('tab2', 'clearfix', ['button1','button2','button3'], [page1, page2, page3], document.body);
+const tab2 = new Tab('tab2', 'clearfix', ['button1','button2','button3'], [page1, page2, page3], document.body,'mouseover');
 tab2.addPage(['button4','button5'],[page4,page5]);

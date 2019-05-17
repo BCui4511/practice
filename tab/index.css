@@ -3,17 +3,17 @@
     margin: 0;
     box-sizing: border-box;
 }
-button {
-    outline: none;
-    border: 1px solid black;
-}
 
 html,
 body {
     height: 100%;
     width: 100%;
+    background-color: #fafafa;
 }
-
+button {
+    outline: none;
+    border: 1px solid black;
+}
 .tab-page {
     display: none;
 }
@@ -45,13 +45,26 @@ body {
 }
 
 #tab2 {
-    width: 400px;
     margin-top: 10px;
+    width: 100px;
 }
+
 #tab2 .button-container {
     width: 100px;
     float: left;
 }
+
+#tab2 .page-container{
+    display: none;
+}
+
+#tab2:hover {
+    width: 400px;    
+}
+#tab2:hover .page-container {
+    display: block;
+} 
+
 #tab2 .page-container {
     width: 300px;
     float: left;
@@ -80,11 +93,7 @@ body {
     clear: both;
 }
 
-
-#tab1 .clicked-button {
-    background-color: blueviolet;
+.clicked-button {
+    background-color: #ccc;
 }
 
-#tab2 .clicked-button {
-    background-color: brown;
-}
