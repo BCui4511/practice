@@ -16,8 +16,10 @@ function Tab(id, opt) {
 // 初始化
 Tab.prototype.init = function (opt) {
     const tabClass = this.tabNode.classList;
+    // 是否覆盖样式
     if (!tabClass.contains('cover-tab-style')) {
         if (opt && opt.style) {
+            // 支持多种样式
             tabClass.add(opt.style);
         } else {
             tabClass.add('normal-tab');
