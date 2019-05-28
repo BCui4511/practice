@@ -1,0 +1,65 @@
+/* 基本样式 normal-tab*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.normal-tab>ul {
+    background-color: #badcad;
+    font-size: 0;
+    padding-left: 12px;
+    padding-top: 2px;
+}
+
+.normal-tab li {
+    position: relative;
+    list-style-type: none;
+    display: inline-block;
+    height: 50px;
+    width: 120px;
+    font-size: 16px;
+    line-height: 50px;
+    text-align: center;
+    border-left: 1px solid; 
+    border-image: linear-gradient(rgba(0,0,0,0) 25%,white 25%,white 75%, rgba(0,0,0,0) 75%) 5;
+    background-color: #badcad;
+}
+
+.normal-tab li:last-child {
+    border-right: 1px solid; 
+    border-image: linear-gradient(rgba(0,0,0,0) 25%,white 25%,white 75%, rgba(0,0,0,0) 75%) 5;
+}
+.normal-tab li.clicked-li {
+    background-color: #fff;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border: 0px solid #fff;
+}
+.normal-tab .clicked-li + li {
+    border-left: 0px solid #fff;
+}
+.normal-tab .clicked-li:before,
+.normal-tab .clicked-li:after {
+    position: absolute;
+    bottom: 0px;
+    width: 14px;
+    height: 14px;
+    content: " ";
+    z-index: 2;
+}
+.normal-tab .clicked-li:before {
+    box-shadow: 4px 4px #fff;
+    left: -14px;
+    border-bottom-right-radius: 12px;
+}
+.normal-tab .clicked-li:after {
+    box-shadow: -4px 4px #fff;
+    right: -14px;
+    border-bottom-left-radius: 12px;
+}
+.normal-tab .tab-page {
+    display: none;
+}
+.normal-tab .clicked-page {
+    display: block;
+}
