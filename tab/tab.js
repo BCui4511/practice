@@ -20,7 +20,7 @@ Tab.prototype.init = function (opt) {
     if (!tabClass.contains('cover-tab-style')) {
         if (opt && opt.style) {
             // 支持多种样式
-            tabClass.add(opt.style);
+            tabClass.add(opt.style + '-tab');
         } else {
             tabClass.add('normal-tab');
         }

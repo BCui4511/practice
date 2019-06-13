@@ -5,6 +5,6 @@
 // }
 const opt = {
     startPage: 1,
+    // style: 'brief',
 }
 const tab1 = new Tab('tab1', opt);
-const tab2 = new Tab('tab2');
